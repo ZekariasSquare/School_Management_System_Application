@@ -1,0 +1,36 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Class>
+
+@{
+    ViewData["Title"] = "Index";
+  
+}
+
+<h1>Class List</h1>
+
+<p>
+    <a asp-action="AddClass" class="btn btn-success">Add New Class</a>
+</p>
+<div class="container row p-0 m-0">
+    <table class="table table-striped border ">
+        <tr>
+            <th>Class ID</th>
+            <th>Class Name</th>
+            <th></th>
+        </tr>
+        @foreach(var Class in Model)
+        {
+            <tr>
+                <td>@Class.ClassId</td>
+                <td>@Class.ClassName</td>
+                <td>
+                <a asp-action="Edit" asp-route-id="@Class.ClassId" class="btn btn-info">Edit</a> |
+                <a asp-action="Details" asp-route-id="@Class.ClassId;" class="btn btn-success">Details</a> |
+                <a asp-action="Delete" asp-route-id="@Class.ClassId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="col">
+           <input asp-action="Welcome" asp-controller="AdminController1" type="submit" value="Back" class="btn btn-danger" />
+      </div>
+</div>

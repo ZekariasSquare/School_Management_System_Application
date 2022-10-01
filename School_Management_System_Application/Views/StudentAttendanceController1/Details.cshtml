@@ -1,0 +1,39 @@
+﻿@model School_Management_System_Application.Models.StudentAttendance
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>StudentAttendance</h4>
+    <hr />
+    <table class="table">
+    <tr>
+        <th>Attendence ID</th>
+        <td>@Model.AttendanceId</td>
+    </tr>
+    <tr>
+        <th>Roll Nunber</th>
+        <td>@Model.roll_no</td>
+    </tr>
+    <tr>
+        <th>Attendence Date</th>
+        <td>@Model.AttendanceDate</td>
+    </tr>
+    <tr>
+        <th>Class Id</th>
+        <td>@Model.ClassId</td>
+    </tr>
+    <tr>
+        <th>Course ID</th>
+        <td>@Model.CourseId</td>
+    </tr>
+</table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AttendanceId" class="btn btn-info">Edit</a> |
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>

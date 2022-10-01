@@ -1,0 +1,54 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.StudentAttendance>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Studence Attendance List</h1>
+
+<p>
+    <a asp-action="AddAttendance" class="btn btn-success">Add New Attendance</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.roll_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttendanceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.roll_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendanceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AttendanceId" class="btn btn-success">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AttendanceId" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AttendanceId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

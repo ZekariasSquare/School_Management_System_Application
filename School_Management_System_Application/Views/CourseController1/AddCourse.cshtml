@@ -1,0 +1,39 @@
+﻿@model School_Management_System_Application.Models.Course
+@{
+    ViewData["Title"] = "AddCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add Course</h1>
+
+<h4>Course</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddCourse">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group col-md-6">
+            <label for="CourseName">Course Name</label>
+            <input type="text" class="form-control" id="CourseName" name="CourseName" placeholder="Course Name">
+        </div>
+            <div class="form-group col-md-6">
+            <label for="Credit_hour">Credit hour</label>
+            <input type="number" class="form-control" id="Credit_hour" name="Credit_hour" placeholder="Credit_hour">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="ClassId">Class Id</label>
+            <input type="text" class="form-control" id="ClassId" name="ClassId" placeholder="Class ID">
+        </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-info">Back to List</a>
+</div>
+
+
+

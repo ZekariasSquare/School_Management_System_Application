@@ -1,0 +1,36 @@
+﻿@model School_Management_System_Application.Models.Annoucement
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    
+    <hr />
+    <h1>Annoucement</h1>
+
+  <table class="table">
+    <tr>
+        <th>ID</th>
+        <td>@Model.Id</td>
+    </tr>
+    <tr>
+        <th>Annoucement Description</th>
+        <td>@Model.Annoucement_Description</td>
+    </tr>
+    <tr>
+        <th>Posted Date</th>
+        <td>@Model.Annoucement_Date</td>
+    </tr>
+    <tr>
+        <th>Annoucements</th>
+        <td>@Model.Annoucements</td>
+    </tr>
+    
+  </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info">Edit</a> |
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Parent>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<h1>List</h1>
+
+<a asp-action="Addparent" class="btn btn-success">Add New Parent </a>
+<div class="container row p-0 m-0">
+    <table class="table table-striped border ">
+        <tr>
+            <th>Id</th>
+            <th>First name </th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+        @foreach(var parent in Model)
+        {
+            <tr>
+                <td>@parent.ParentId</td>
+                <td>@parent.FName</td>
+                <td>@parent.LName</td>
+                <td>@parent.Email</td>
+                
+                
+                <td>
+                    <a asp-action="Details" asp-route-id="@parent.ParentId" class="btn btn-info">Detail</a>
+                    <a asp-action="Edit"asp-route-id="@parent.ParentId" class="btn btn-success">Edit</a>
+                    <a asp-action="Delete"asp-route-id="@parent.ParentId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Grade>
+
+@{
+    ViewData["Title"] = "FindGrade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Student Grade</h1>
+<div class="col-4 p-0 justify-content-end">
+    <form asp-controller="GradeController1" asp-action="FindGrade">
+        <span class="btn-group">
+            <input class="form-control" type="text" name="Search" placeholder="Search Student By ID"/>
+            <input class="p-1 ml-2 btn btn-sm btn-info" type="submit" value="Search"/>
+        </span>
+    </form>
+
+</div>
+<br />
+
+<div class="container row p-0 m-0">
+    <table class="table table-striped border ">
+        <tr>
+            <th>Grade ID</th>
+            <th>Student ID</th>
+            <th>Roll number</th>
+            <th>Total Mark %</th>
+            <th>Out Of Mark %</th>
+            <th>Grade</th>
+            <th>Pass Or Fail ID</th>
+            <th>Class ID</th>
+            <th>Course ID</th>
+            
+            <th></th>
+        </tr>
+        @foreach(var Grade in Model)
+        {
+            <tr>
+                <td>@Grade.GradeId</td>
+                <td>@Grade.studentId</td>
+                <td>@Grade.Roll_No</td>
+                <td>@Grade.TotalMarks</td>
+                <td>@Grade.OutOfMarks</td>
+                <td>@Grade.Grd</td>
+                <td>@Grade.PassOrFail</td>
+                <td>@Grade.ClassId</td>
+                <td>@Grade.CourseId</td>
+                
+                <td></td>
+                
+            </tr>
+        }
+    </table>
+    <div>
+    
+     <a asp-controller="ParentController1" asp-action="Welcome" class="btn btn-primary">Back</a>
+     </div>
+</div>

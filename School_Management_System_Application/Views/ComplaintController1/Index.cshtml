@@ -1,0 +1,45 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Complaint>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Complaint</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posted_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Complain)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posted_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complain)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-action="Welcome" asp-controller="AdminController1" class="btn btn-info">Back To Menu</a>
+</div>

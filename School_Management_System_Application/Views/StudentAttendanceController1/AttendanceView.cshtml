@@ -1,0 +1,54 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.StudentAttendance>
+
+@{
+    ViewData["Title"] = "AttendanceView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Attendance View</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.roll_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AttendanceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.roll_no)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AttendanceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseId)
+            </td>
+            <td>
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+  <div>
+    
+     <a asp-controller="ParentController1" asp-action="Welcome" class="btn btn-primary">Back</a>
+     </div>

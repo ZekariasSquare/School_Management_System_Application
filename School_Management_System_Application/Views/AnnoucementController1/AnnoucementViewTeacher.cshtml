@@ -1,0 +1,45 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Annoucement>
+
+@{
+    ViewData["Title"] = "AnnoucementViewTeacher";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Annoucement </h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Annoucement_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Annoucement_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Annoucements)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annoucement_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annoucement_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Annoucements)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    
+    <a asp-controller="TeacherController1" asp-action="Welcome" class="btn btn-info">Back to Menu</a>
+</div>

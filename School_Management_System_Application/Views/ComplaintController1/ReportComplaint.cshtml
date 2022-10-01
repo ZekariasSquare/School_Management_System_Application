@@ -1,0 +1,41 @@
+﻿@model School_Management_System_Application.Models.Complaint
+@{
+    ViewData["Title"] = "ReportComplaint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Report Complaint</h1>
+
+<form asp-action="ReportComplaint" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Student_Id">Student Id</label>
+            <input type="text" class="form-control" id="Student_Id" name="Student_Id" placeholder="Student Id">
+        </div>
+        
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Posted_Date">Posted Date</label>
+            <input type="date" class="form-control" id="Posted_Date" name="Posted_Date" placeholder="Posted Date">
+        </div>
+       
+    </div>
+   <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Complain">Complain</label>
+            <textarea class="form-control" id="Complain" name="Complain" placeholder="Complain"> </textarea>
+        </div>
+        
+    </div>
+    
+    
+           <div class="form-group">
+                <input type="submit" value="Report" class="btn btn-primary" />
+            </div>
+      <div class="col">
+           <input asp-action="Welcome" asp-controller="StudentController1" type="submit" value="Back" class="btn btn-danger" />
+      </div>
+</form>
+
+

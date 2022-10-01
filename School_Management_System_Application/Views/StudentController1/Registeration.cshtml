@@ -1,0 +1,86 @@
+﻿@model School_Management_System_Application.Models.Student
+
+@{
+    ViewData["Title"] = "Registeration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registeration</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Registeration">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <div class="form-row">
+         <div class="form-group col-md-6">
+            <label asp-for="Student_ID">Student ID</label>
+            <input asp-for="Student_ID" type="text" class="form-control" id="Student_ID" name="Student_ID" placeholder="Student_ID">
+            <span asp-validation-for="Student_ID"></span>
+        </div>
+         <div class="form-group col-md-6">
+            <label asp-for="FirstName">First Name</label>
+            <input asp-for="FirstName" type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+         <div class="form-group col-md-6">
+            <label asp-for="LastName">Last Name</label>
+            <input asp-for="LastName" type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name">
+            <span asp-validation-for="LastName"></span>
+        </div>
+         <div class="form-group col-md-6">
+            <label asp-for="Gender">Gender</label>
+            <input asp-for="Gender" type="text" class="form-control" id="Gender" name="Gender" placeholder="Gender">
+            <span asp-validation-for="Gender"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Phone_No">Phone No</label>
+            <input type="number" class="form-control" id="Phone_No" name="Phone_No" placeholder="Phone No">
+            <span asp-validation-for="Phone_No"></span>
+        </div>
+         <div class="form-group col-md-6">
+            <label asp-for="Roll_No">Roll No</label>
+            <input type="number" class="form-control" id="Roll_No" name="Roll_No" placeholder="Roll No">
+            <span asp-validation-for="Roll_No"></span>
+        </div>
+
+         <div class="form-group col-md-6">
+            <label asp-for="DOB">Date Of Birth</label>
+            <input type="date" class="form-control" id="DOB" name="DOB" placeholder="Date Of Birth">
+            <span asp-validation-for="DOB"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="username">username</label>
+            <input asp-for="username" type="text" class="form-control" id="username" name="username" placeholder="Username">
+            <span asp-validation-for="username"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="password">password</label>
+            <input asp-for="password" type="text" class="form-control" id="password" name="password" placeholder="password">
+            <span asp-validation-for="password"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" type="text" class="form-control" id="Email" name="Email" placeholder="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+         <div class="form-group col-md-6">
+            <label asp-for="ClassId">Class ID</label>
+            <input type="text" class="form-control" id="ClassId" name="ClassId" placeholder="Class ID">
+            <span asp-validation-for="ClassId"></span>
+        </div>
+      </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+

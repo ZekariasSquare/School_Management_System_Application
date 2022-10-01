@@ -1,0 +1,52 @@
+﻿@model School_Management_System_Application.Models.Grade
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Grade Details </h1>
+
+<table class="table">
+    <tr>
+        <th>Grade ID</th>
+        <td>@Model.GradeId</td>
+    </tr>
+    <tr>
+        <th>Student ID</th>
+        <td>@Model.studentId</td>
+    </tr>
+    <tr>
+        <th>Roll Number</th>
+        <td>@Model.Roll_No</td>
+    </tr>
+    <tr>
+        <th>Total Marks</th>
+        <td>@Model.TotalMarks</td>
+    </tr>
+    <tr>
+        <th>Out Of Marks</th>
+        <td>@Model.OutOfMarks</td>
+    </tr>
+    <tr>
+        <th>Grade</th>
+        <td>@Model.Grd</td>
+    </tr>
+    <tr>
+        <th>Valuation</th>
+        <td>@Model.PassOrFail</td>
+    </tr>
+    <tr>
+        <th>Class Id</th>
+        <td>@Model.ClassId</td>
+    </tr>
+    <tr>
+        <th>Course Id</th>
+        <td>@Model.CourseId</td>
+    </tr>
+    
+</table>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.GradeId"class="btn btn-secondary" >Edit</a> |
+    <a asp-action="Index" class="btn btn-info">Back to List</a>
+</div>

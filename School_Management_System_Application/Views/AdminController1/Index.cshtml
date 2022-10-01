@@ -1,0 +1,45 @@
+﻿@model IEnumerable<School_Management_System_Application.Models.Admin>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Admin List</h1>
+
+<p>
+    <a asp-action="AddAdmin" class="btn btn-info">Add New Admin</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AId" class="btn btn-info">Edit</a> |
+               <a asp-action="Delete"asp-route-id="@item.AId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p>
+    <a asp-action="Welcome" class="btn btn-danger" >Back</a>
+</p>
